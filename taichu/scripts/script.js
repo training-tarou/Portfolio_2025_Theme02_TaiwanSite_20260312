@@ -86,7 +86,7 @@ document.querySelectorAll('.modal').forEach(modal => {
   // 0.5秒後に display: none にして完全に消す
   setTimeout(() => {
     loading.style.display = "none";
-  }, 500); // CSS transition と同じ時間
+  }, 20); // CSS transition と同じ時間
 });
 
 
