@@ -1,0 +1,1290 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    background-color: #F4F4F4;
+}
+
+
+header {
+    background: url(../images/topImg.png) no-repeat center/cover;
+    width: 100%;
+    height: 667px; 
+    position: relative;/*親要素に指定!*/
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.headerSnsIcon{
+    display:inline-flex;
+    flex-direction: column;
+    width:38.9px;
+    height:136px;
+    gap:11px;
+    position:absolute; /*header基点*/
+    top:466px;
+    left:50%;
+    transform: translateX(-167px);
+
+}
+
+
+#daichu {
+    width: 199px;
+    height: 372px;
+
+    margin: 69px 88px 19px 88px;
+    
+}
+
+#daichuText {
+    position: absolute;/*基点headerで動かせる！*/
+    right: 0; 
+    bottom: 8px; 
+    color: #ffffff;
+    font-family: 'Zen Kaku Gothic New';
+    font-size: 12px;
+    line-height: 19.2px;
+    width: 249px;
+    height: 57.6px;
+    
+}
+
+#logoTop {
+    margin-left: 20px;
+}
+
+.pc-only {
+    display: none;/*pc用のhomeは表示しない！*/
+}
+
+
+.navigation ul {
+    list-style: none;
+    display: flex;          /* 横並び */
+    gap: 8px;               /* 隙間調整 */
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.navigation li {
+    position: relative;
+}
+
+.navigation a {
+    color: #000;      /*デフォ青いから黒に！*/
+    text-decoration: none; /* デフォの下線消す */
+}
+
+.navigation a:hover {
+   color: rgba(0, 0, 0, 0.25); /* ホバーしたら透明度アップ */
+}
+
+/* li の後ろに > を入れる */
+.navigation li + li::before {
+    content: ">";
+    margin: 0 8px;
+    color: #000;
+}
+
+
+
+
+#nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25); /* 黒の25%透明 */
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+
+
+
+#museam {
+    margin-top: 20px;
+}
+
+/* ハンバーガーの開閉部分 */
+.hamburger {
+    flex: 0 0 48px;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    z-index: 100;
+}
+/* ドロワー部分 */
+#drawer {
+    line-height: 1.6;
+    background-color: #007AB7;
+    width: 225px;
+    max-height: 100%;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    right: -225px;
+    transition: transform 0.3s;
+}
+/* ドロワー開閉*/
+#wrapper{
+    transition: transform 0.3s;
+}
+.show {
+    transform: translate(-225px, 0);
+}
+.vanish {
+    display: none;
+}
+/* ドロワー部分終了 */
+.dTop {
+    display: flex;
+    margin: 4px 4px 80px 12px;
+}
+.drawerIcon {
+    max-width: 100%;
+    width: 101px;
+    height: 40px;
+    margin-right: 60px;
+    transform: translateY(4px);
+}
+.dIcon {
+    flex: 0 0 48px;
+}
+.dList {
+    display: block;
+}
+.dItem a {
+    display: inline-block;
+    /* 文字幅＝要素幅にするため*/
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    /* 下線 */
+}
+.itemA {
+    margin-bottom: 60px;
+}
+.itemB {
+    margin-bottom: 40px;
+}
+.itemC {
+    margin-bottom: 20px;
+}
+
+
+
+/*-------------------スマホ版（768px以下の場合）-------------------------*/
+@media screen and (max-width: 768px) {
+
+    /* トップへ戻るアイコン */
+.toTopIcon {
+    position:fixed ;
+    bottom:20px ;
+    width:48px;
+    height:48px;
+    right:50%;
+    transform: translateX(168px);
+}
+
+.toTopIcon img {
+    width: 48px; /* もっと小さくしたいならここを変える 例:32px */
+    height: auto;
+}
+
+    .pc-only { 
+        display: none;  /* PC用非表示 */
+    }     
+    .mobile-only { 
+        display: list-item;  /* スマホ用表示 */
+    }
+
+    .title {
+    display: flex;
+    justify-content: center;    
+    align-items: baseline;
+    position: relative;
+    font-weight: 350;
+    margin-top: 20px;
+    }
+
+    .title1 {
+        font-size: 24px;
+    }
+    .title2 {
+    font-size: 12px;
+    }
+
+    .attracSubTitle {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 40px 128.5px 20px 128.5px;
+    letter-spacing: 0.22em; /* 文字と文字の間を広げる */
+    text-align: center;
+    }
+
+
+
+    .title::after {
+    content: "";
+    position: absolute;/*左上基点で動かす*/
+    left: 77.5px;
+    width: 220px; 
+    height: 40px;
+    background: url("../images/titleBack.png") no-repeat center/contain;
+    }
+
+    .attracText1,
+    .attracText2,
+    .attracTextOne1 {
+    font-size: 12px;
+    background-color: rgba(237, 161, 132, 0.2); 
+    /* #EDA184をRGBにすると(237, 161, 132)、それに２０％の透明度(0.2)で完成！*/
+    width: 295px;
+    padding: 8px 36px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;   /* ← 文字を中央揃え */
+    line-height: 19px;    /* ← 行間19px */
+    }
+
+    #villagePcImg1,
+    #villagePcImg2,
+    #wetPcImg1,
+    #wetPcImg2 {
+        display: none;
+    }
+
+    #wetImg1, 
+    #villageImg1 {
+        width: 295px;
+        height: 221px;
+        display: block;      /* 画像をブロック要素に */
+        margin: 0px auto;
+        margin-bottom: 20px;  
+        max-width: 100%;
+        height: auto;        /* 縦横比を維持 */
+    }
+
+    #wetImg2,
+    #villageImg2 {
+        width: 295px;
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .horizontalLine {
+        /* 線の幅を223ピクセルに設定 */
+        width: 223px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin: 40px auto;
+
+        background-color: #000000;
+        
+    }
+
+    #museamText {
+    display: block;
+    font-size: 12px;
+    margin: 60px auto;
+    width: 223px;
+    }
+
+    #museamText::before,
+    #museamText::after {
+        content: "";
+        display: block;    
+
+        /* 線の幅を223ピクセルに設定 */
+        width: 223px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin: 12px auto;
+        padding: 12px auto;
+
+
+        background-color: #000000;
+
+    }
+
+    .museamSubTitle1 {
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-left: 40px;
+    }
+
+    .museamSubTitle2 {
+        font-weight: bold;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+
+    .museamImg {
+        display: block;
+        width: 295px;
+        height: 135px;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    /*-----------------sweets----------------------*/
+
+    .sweets1 {
+    width: 223px;
+    height: 148px;
+    }
+
+    .sweets2 {
+        width: 157.5px;
+        height: 225px;
+    }
+
+    .sweets3 {
+        width: 157.5px;
+        height: 225px;
+    }
+
+
+    #sweetsTitle {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    #sweetsContent::before,
+    #sweetsContent::after {
+    content: "";
+    display: block;    
+
+     /* 線の幅を223ピクセルに設定 */
+    width: 223px;
+    /* 線の高さ（太さ）を1ピクセルに設定 */
+    height: 1px;
+    /* 必要に応じて、線の下のスペースを調整 */
+    margin: 12px auto;
+    padding: 12px auto;
+
+
+    background-color: #000000;
+
+    }
+
+    .sweets1 {
+        display: block;
+        margin: 0 auto;
+
+    }
+
+    .sweets1,
+    .sweets2,
+    .sweets3 {
+        margin-bottom: 20px;
+    }
+
+    #sweetsImgBox {
+        display: flex; /* 横並びにする魔法！ */
+        gap: 10px;     /* 画像の間にすき間をあける（自由） */
+        justify-content: center; /* 真ん中に寄せたい場合はこれも！ */
+    }
+
+    .sweetsText {
+        display: block;
+        width: 223px;
+        font-size: 12px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        line-height: 19px;    /* ← 行間19px */
+    }
+
+
+
+
+    /*----------------------------sweets---------------------------------*/
+
+
+    /*モーダル*/
+        /* モーダルの基本設定 */
+
+        .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+         z-index: 100;
+        }
+        .modal.active {
+        opacity: 1;
+        pointer-events: auto;
+        }
+        .modalContent {
+        width: 375px;
+        height: 426px;
+        background: #0180BE;
+        padding: 20px;
+        border-radius: 12px;
+        transform: translateY(40px);
+        transition: transform 0.3s ease;
+        color: #fff;
+        }
+        .modal.active .modalContent {
+        transform: translateY(0);
+        }
+        .closeBtn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        }
+        .title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .modalText1 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: bold;
+
+        }
+        .modalText2 {
+        font-size: 12px;
+        line-height: 19.2px;
+        margin-top: 8px;
+        text-align: left;
+        /* 不自然な文字切れによる改行を防止 */
+        word-break: normal; 
+        /* 補助的にこれも追記推奨 */
+        overflow-wrap: break-word;
+        }
+        
+        .infoImg {
+        width: 175.5px;
+        height:165px;
+        margin-bottom: 40px;
+        
+        }
+
+        .infoImgBox {
+            display: flex;
+            gap: 20px;
+        }
+
+
+
+        .item {
+                border: 4px solid  rgba(237, 161, 132, 0.2);
+                padding: 12px;
+                width: 108px;
+                height: 36px;
+                font-size: 12px;   
+                display: flex;              /* Flexboxにする（かぴぞうP７６）*/
+                justify-content: center;    /* 横方向中央揃え（かぴぞうP１１４)*/
+                align-items: center;        /* 縦方向中央揃え */
+                white-space: nowrap;        /* 改行させない */
+                margin: 8px 40px 40px 227px;
+        }
+        /* ホバー時の強調スタイル */
+
+        .item:hover {
+            /* 文字をグレーにする */
+            color: gray; 
+            /*  ドロップシャドウで光っているような効果 */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            /* 少しだけ上に移動させて浮き上がっているように見せる */
+            transform: translateY(-2px);
+            /* カーソルをポインターに変更 */
+            cursor: pointer;
+        }
+
+        /*ローディング*/
+        /* 回転の動き */
+        .loading {
+        width: 100%;
+        height: 100vh;/* 【確認】100vhに直す？ */
+        background-color: #007AB7; /* 背景を青に */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 👈 【追加】JavaScriptで opacity: 0 になったときに 0.5秒でフェードアウトさせる */
+        /* JavaScriptのsetTimeout(500)と一致させる */
+        transition: opacity 1.7s ease-in-out; 
+        
+        z-index: 9999; /* 他のコンテンツの上に確実に表示 */
+        position: fixed; /* 画面に固定 */
+        top: 0;
+        left: 0;
+        }
+
+        .loadingLogo {
+        width: 287px;
+        height: 117px;
+        margin: 0 auto;
+        animation: blink 3.5s infinite; /* アニメーションを繰り返す */
+        }
+
+        /* 点滅アニメーション */
+        @keyframes blink {
+        0%   { opacity: 1; }   /* 見える */
+        50%  { opacity: 0.5; }   /* 完全に消えるのではなく少し残すか、0にする */
+        100% { opacity: 0; }   /* 見える */
+        }
+
+        /* フッター部分の修飾 */
+        .linkFooter {
+            height : 349px;
+            background-color:#007AB7;
+            position:relative;
+        }
+        .fMark {
+            display:flex;
+            margin:0 auto;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .fLink {
+            width: 195px;
+            height: 167px;
+            margin: 0 auto 80px;
+        }
+        .fText {
+            font-size: 12px;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            margin-top: 6px;
+            margin-bottom: 12px; 
+        }
+        .footerSnsIcon{
+            display: inline-flex;
+            gap: 11px;
+            position: absolute;
+            top: 271px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .footerLogo {
+            width: 71px;
+            height: 28px;
+            position: absolute;
+            top: 275px;
+            left: 50%;
+            transform: translateX(-168px);
+        }
+
+        .footerLogo img {
+            width: 71px;
+            height: auto;
+            display: block;
+        }
+
+        .cRight {
+            text-align: center;
+            border-top: 1px solid #03A9F4;
+            height: 34px;
+            padding-top: 10px;
+            color: #ffffff;
+            font-size: 10px;
+            font-family: 'Noto Sans JP';
+        }
+        small{
+            align-self: center;
+        }
+
+        /*ドロワーのMENUだけ太字に(いらないことしなくていいかも。。）
+        .itemA {
+            font-weight: bold;
+        }*/
+
+
+
+}
+
+
+
+/*-------------------パソコン版（768px以上の場合）-----------------------*/
+
+@media screen and (min-width: 768px) {
+
+/* トップへ戻るアイコン */
+.toTopIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;   /* ← これだけで右下に行く */
+    width: 48px;
+    height: 48px;
+}
+.toTopIcon img {
+    width: 48px;
+    height: auto;
+}
+
+
+    /*header*/
+
+    header {
+        background-image: url("../images/pcTopImg.png"); /* ← PC用の画像 */
+        background-size: cover; /*縦横比を保ったまま、要素全体に必ずおさまるように拡大・縮小する（かぴぞうP１６２）*/
+        background-position: center; /*背景画像の位置指定（かぴぞうP１３６）*/
+        height: 768px;
+    }
+    .headerSnsIcon {
+        position: absolute; /*header基点*/
+        top: auto;       /* スマホ用の top を無効化！ */
+        bottom: 130px;   /* 下から80px*/
+        left: 103px;     /* 左から103px*/
+        gap: 40px;
+        transform: none; /* スマホ用の移動を無効化 */
+
+    }
+
+    #logoTop {
+        display: none;
+    }
+
+    #daichu {
+        width: 300px;
+        height: 539px;
+        margin-left: 363px;
+    }
+
+    #daichuText {
+        width: 467px;
+        height: 96px;
+        font-size: 20px;
+        font-weight: 300;
+        margin-right: 103px;
+        margin-bottom: 0px;
+        letter-spacing: 0.5px;
+        line-height: 32px;    /* ← 行間*/
+    }
+
+    /*全title共通*/
+    .title1 {
+        font-size: 48px;
+    }
+    .title2 {
+        font-size: 20px;
+    }
+
+    /*左寄せのtitle*/
+    .titleLeft::after {
+        content: "";
+        position: absolute;/*左上基点で動かす*/
+        left: 103px;
+        top: 20px;
+        width: 530px; 
+        height: 96px;
+        background: url("../images/titleBack.png") no-repeat center/contain;
+    }
+    
+    .titleLeftBox {
+        position: relative;
+    }
+    #wetLand .title {
+        display: flex;
+        margin-left: 220px;
+        align-items: baseline;
+        padding-top: 40px;
+        font-weight: 300;
+        
+    }
+
+    #sweets .title {
+        display: flex;
+        margin-left: 250px;
+        align-items: baseline;
+        padding-top: 40px;
+        font-weight: 300;
+    }
+
+    /*右寄せのtitle*/
+    .titleRight::after {
+        content: "";
+        position: absolute;/*左上基点で動かす*/
+        left: 733px;
+        top: 20px;
+        width: 530px; 
+        height: 96px;
+        background: url("../images/titleBack.png") no-repeat center/contain;
+    }
+    
+    .titleRightBox {
+        position: relative;
+    }
+    #museam .title {
+        display: flex;
+        margin-left: 880px;
+        align-items: baseline;
+        padding-top: 40px;
+        font-weight: 300;
+        
+    }
+
+    .attracSubTitle {
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 103px;
+    margin-top: 100px;
+    letter-spacing: 0.22em; /* 文字と文字の間を広げる */
+    
+    }
+
+   
+    .attracText1,
+    .attracText2,
+    .attracTextOne1 {
+    font-size: 20px;
+    background-color: rgba(237, 161, 132, 0.2); 
+    /* #EDA184をRGBにすると(237, 161, 132)、それに２０％の透明度(0.2)で完成！*/
+    padding: 20px 40px;
+    line-height: 30px;    /* ← 行間32px */
+    font-weight: 300;
+    }
+
+    .attracText1 {
+        width: 500px;
+        height: 360px;
+        text-align: center;   /* ← 文字を中央揃え */
+        align-items: center;     /* ← 上下位置をそろえる */
+        padding-top: 40px;
+    }
+
+     .attracTextOne1 {
+        width: 500px;
+        height: 368px;
+        text-align: center;   /* ← 文字を中央揃え */
+        align-items: center;     /* ← 上下位置をそろえる */
+        padding-top: 20px;
+    }
+
+    .attracText2 {
+        width: 500px;
+        height: 144px;
+        text-align: center;   /* ← 文字を中央揃え */
+        align-items: center;     /* ← 上下位置をそろえる */
+        padding-top: 40px;
+    }
+ 
+    /*------------------前半の画像調整---------------*/
+    #villageImg1,
+    #villageImg2,
+    #wetImg1,
+    #wetImg2 {
+        display: none;
+    }
+    #wetPcImg1 {
+        width: 600px;
+        height: 368px;
+    }
+    #villagePcImg1 {
+        width: 600px;
+        height: 360px;
+    }
+    #wetPcImg2,
+    #villagePcImg2 {
+        width: 600px;
+        height: 144px;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        
+    }
+    .attractionBox {
+        display: flex;
+        gap: 20px; /* 画像とテキストの間の余白 調整してOK */
+        align-items: flex-start; /* 高さ揃えたいなら */
+        justify-content: center; /* ← 真ん中寄せ */
+        margin-top: 40px;
+    }
+
+    .horizontalLine {
+        /* 線の幅を480ピクセルに設定 */
+        width: 480px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin: 80px auto;
+
+        background-color: #000000;
+        
+    }
+
+    #museamText {
+        display: block;
+        font-size: 18px;
+        margin-top: 80px;
+        margin-left: 143px;
+        width: 400px;
+        }
+
+
+
+    #museamText::before,
+    #museamText::after {
+        content: "";
+        display: block;    
+
+        /* 線の幅を223ピクセルに設定 */
+        width: 420px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin: 30px 0px;
+        padding: 12px auto;
+        background-color: #000000;
+
+    }
+
+ 
+    
+        .museamSubTitle1 {
+            font-size: 36px;
+            margin-bottom: 0;
+        }
+
+        .museamSubTitle2 {
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 36px;
+        }
+
+        
+
+        .museamImg {
+            display: block;
+            width: 530px;
+            height: 270px;
+            border-radius: 5px;
+        }
+
+        .museamContent {
+        display: flex;
+        gap: 60px; /* 画像と画像の間の余白 調整してOK */
+        align-items: flex-start; /* 高さ揃えたいなら */
+        justify-content: center; /* ← 真ん中寄せ */
+        margin-top: 40px;
+    }
+
+    /*-----------------sweets----------------------*/
+
+    .sweets1 {
+        width: 560px;
+        height: 346px;
+        display: block;
+        margin-left: 123px;
+        margin-top: 80px;
+        }
+
+    .sweets2,
+    .sweets3 {
+        width: 400px;
+        height: 600px;
+    }
+
+    #sweetsTitle {
+        font-size: 36px;
+        margin-top: 80px;
+        margin-left: 296px;
+    }
+
+    #sweetsContent::before {
+        content: "";
+        display: block;    
+
+        /* 線の幅を223ピクセルに設定 */
+        width: 420px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin-left: 158px;
+        margin-top: 27px;
+
+
+        background-color: #000000;
+
+    }
+
+    #sweetsContent::after {
+        content: "";
+        display: block;    
+
+        /* 線の幅を223ピクセルに設定 */
+        width: 480px;
+        /* 線の高さ（太さ）を1ピクセルに設定 */
+        height: 1px;
+        /* 必要に応じて、線の下のスペースを調整 */
+        margin: 80px auto;
+        padding: 12px auto;
+
+
+        background-color: #000000;
+
+    }
+
+    
+/* トップへ戻るアイコン */
+.toTopIcon {
+    position:fixed ;
+    bottom:20px ;
+    width:48px;
+    height:48px;
+    right:50%;
+    transform: translateX(168px);
+}
+
+.toTopIcon img {
+    width: 48px; /* もっと小さくしたいならここを変える 例:32px */
+    height: auto;
+}
+
+
+
+
+
+
+
+    #sweetsImgBox {
+        display: flex; /* 横並びにする魔法！ */
+        gap: 160px;     /* 画像の間にすき間をあける（自由） */
+        justify-content: center; /* 真ん中に寄せたい場合はこれも！ */
+        margin-top: 60px;
+    }
+
+    .sweetsText {
+        display: block;
+        width: 420px;
+        font-size: 20px;
+        line-height: 32px;    /* ← 行間32px */
+        margin-left: 158px;
+        margin-top: 20px;
+    }
+
+    #sweetsBox {
+        display: flex;
+    }
+
+    #sweetsbox .sweetsText {
+        margin-top: 506px;
+    }
+
+    .sweetsText1 {
+        margin-left: 100px;
+        margin-top: 138px;
+    }
+
+    .sweetsText2 {
+        margin-top: 188px;
+        margin-left: 163px;
+    }
+    /*----------------------------sweets---------------------------------*/
+
+       /* モーダルの基本設定 */
+
+        .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; 
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 100;
+        }
+        .modal.active {
+        opacity: 1;
+        pointer-events: auto;
+        }
+        .modalContent {
+        width: 900px;
+        height: 650px;
+        background: #0180BE;
+
+        border-radius: 12px;
+        transform: translateY(40px);
+        transition: transform 0.3s ease;
+        color: #fff;
+        }
+        .modal.active .modalContent {
+        transform: translateY(0);
+        }
+        .closeBtn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        }
+        .title {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 16px;
+        }
+        .modalText1 {
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            margin-left: 40px;
+            font-weight: bold;
+        }
+        .modalText2 {
+        font-size: 24px;
+        line-height: 38.4px;
+        margin-top: 8px;
+        margin-left: 40px;
+        text-align: left;
+        /* 不自然な文字切れによる改行を防止 */
+        word-break: normal; 
+        /* 補助的にこれも追記推奨 */
+        overflow-wrap: break-word;
+        }
+        
+        .infoImg {
+        width: 380px;
+        height: 380px;
+        margin-bottom: 40px;
+        
+        
+        }
+
+        .infoImgBox {
+            display: flex;
+            gap: 60px;
+            margin-left: 40px;
+        }
+
+
+
+
+
+        .item {
+            border: 4px solid  rgba(237, 161, 132, 0.2);
+            padding: 12px;
+            width: 212px;
+            height: 76px;
+            font-size: 20px;   
+            display: flex;              /* Flexboxにする（かぴぞうP７６）*/
+            justify-content: center;    /* 横方向中央揃え（かぴぞうP１１４)*/
+            align-items: center;        /* 縦方向中央揃え */
+            white-space: nowrap;        /* 改行させない */
+            margin-left: 318px;
+            margin-top: 20px; 
+        }
+        /* ホバー時の強調スタイル */
+
+        .item:hover {
+            /* 文字をグレーにする */
+            color: gray; 
+            /*  ドロップシャドウで光っているような効果 */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            /* 少しだけ上に移動させて浮き上がっているように見せる */
+            transform: translateY(-2px);
+            /* カーソルをポインターに変更 */
+            cursor: pointer;
+        }
+/*ローディング*/
+        /* 回転の動き */
+        .loading {
+        width: 100%;
+        height: 100vh;/* 【確認】100vhに直す？ */
+        background-color: #007AB7; /* 背景を青に */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 👈 【追加】JavaScriptで opacity: 0 になったときに 0.5秒でフェードアウトさせる */
+        /* JavaScriptのsetTimeout(500)と一致させる */
+        transition: opacity 1.5s ease-in-out; 
+        
+        z-index: 9999; /* 他のコンテンツの上に確実に表示 */
+        position: fixed; /* 画面に固定 */
+        top: 0;
+        left: 0;
+        }
+
+        .loadingLogo {
+        width: 287px;
+        height: 117px;
+        margin: 0 auto;
+        animation: blink 3.5s infinite; /* アニメーションを繰り返す */
+        }
+
+        /* 点滅アニメーション */
+        @keyframes blink {
+        0%   { opacity: 1; }   /* 見える */
+        50%  { opacity: 0.5; }   /* 完全に消えるのではなく少し残すか、0にする */
+        100% { opacity: 0; }   /* 見える */
+        }
+
+        .toTopIcon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;   /* ← これだけで右下に行く */
+            width: 48px;
+            height: 48px;
+        }
+        .toTopIcon img {
+            width: 48px;
+            height: auto;
+        }
+     /* フッター部分の修飾 */
+        .linkFooter {
+            height : 489px;
+            background-color:#007AB7;
+            position:relative;
+        }
+        .fMark {
+            display:flex;
+            margin:0 auto;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            width: 64px;
+            height: 48px;
+        }
+        .fLink {
+            width: 332px;
+            height: 240px;
+            margin-left: 103px;
+            margin-top: 150px;
+        }
+        .fText {
+            font-size: 20px;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            margin-top: 6px;
+            margin-bottom: 12px; 
+        }
+        .footerSnsIcon{
+            display: inline-flex;
+            gap: 40px;
+            position: absolute;
+            top: 376px;
+            left: 1085px;
+            transform: translateX(-50%);
+        }
+        .footerLogo {
+            width: 256px;
+            height: 103px;
+            position: absolute;
+            top: 305px;
+            left: 50%;
+            transform: translateX(-168px);
+        }
+
+        .footerLogo img {
+            width: 256px;
+            height: 103px;
+            display: block;
+        }
+
+        .cRight {
+            position: absolute;
+            bottom: 0;   /* ←フッターの底にくっつく */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #03A9F4;
+            height: 52px;
+            padding-top: 10px;
+            color: #ffffff;
+            font-size: 12px;
+            font-family: 'Noto Sans JP';
+                }
+        small{
+            align-self: center;
+
+        }
+
+        .fTextTop {
+            display: none;
+        }
+
+        /* 画面上部固定のナビ部分 スマホ版にのみあるMENUは隠す*/
+/* ハンバーガーはPCでは不要→表示しない */
+    .hamburger,
+    .dIcon,
+    .itemA {
+        display: none;
+    }
+
+    /* PCはロゴ表示 */
+    .dLogo {
+        display: block;
+    }
+
+    /* ドロワーを横並びのトップナビに変える */
+    #drawer {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1366px;
+            padding: 30px auto;
+            height: 94px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);  /* ←これだけ残す！ */
+            right: auto;
+
+            background-color: rgba(0, 0, 0, 0.25);
+            font-size: 24px;
+    }
+
+    .dList {
+        display: flex;
+        margin-top: 40px;
+        margin-right: 103px;
+    }
+
+    .dItem {
+        margin-right: 20px;
+    }
+
+    .dItem:last-child {
+        margin-right: 0;
+    }
+
+    .dItem a {
+        border-bottom: none;
+    }
+
+    .drawerIcon {
+        width: 133px;
+        height: 54px;
+        margin-top: 68px;
+        margin-left: 90px;
+    }
+
+
+}
